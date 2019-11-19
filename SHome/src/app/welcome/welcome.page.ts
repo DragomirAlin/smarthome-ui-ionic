@@ -12,29 +12,29 @@ export class WelcomePage implements OnInit {
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetController.create({
-      header: 'Albums',
+      header: 'Mai mult',
       buttons: [{
-        text: 'Delete',
+        text: 'Facebook',
         role: 'destructive',
-        icon: 'trash',
+        icon: 'logo-facebook',
         handler: () => {
-          console.log('Delete clicked');
+          console.log('www.facebook.com');
         }
       }, {
-        text: 'Share',
-        icon: 'share',
+        text: 'Instagram',
+        icon: 'logo-instagram',
         handler: () => {
           console.log('Share clicked');
         }
       }, {
-        text: 'Play (open modal)',
-        icon: 'arrow-dropright-circle',
+        text: 'Youtube',
+        icon: 'logo-youtube',
         handler: () => {
           console.log('Play clicked');
         }
       }, {
-        text: 'Favorite',
-        icon: 'heart',
+        text: 'Contact',
+        icon: 'contact',
         handler: () => {
           console.log('Favorite clicked');
         }
