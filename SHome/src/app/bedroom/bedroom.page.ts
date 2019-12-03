@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BedroomPage implements OnInit {
 
-  constructor() { }
+  constructor() { 
+
+
+
+    
+  }
+
+  
 
   ngOnInit() {
   }
 
+
+
+  
 }
+
