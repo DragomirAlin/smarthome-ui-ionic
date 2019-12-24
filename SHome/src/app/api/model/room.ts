@@ -11,7 +11,7 @@
  */
 
 
-export interface Product { 
+export interface Room { 
     camera?: number;
     temperatura?: number;
     umiditatea?: number;

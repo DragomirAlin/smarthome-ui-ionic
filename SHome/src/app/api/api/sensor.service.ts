@@ -18,7 +18,7 @@ import { CustomHttpUrlEncodingCodec }                        from '../encoder';
 import { environment } from "src/environments/environment";
 import { Observable }                                        from 'rxjs/Observable';
 
-import { Product } from '../model/product';
+import { Room } from '../model/room';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
 import { Configuration }                                     from '../configuration';
@@ -63,9 +63,9 @@ export class SensorService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public dataId(dataId: number, observe?: 'body', reportProgress?: boolean): Observable<Product>;
-    public dataId(dataId: number, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Product>>;
-    public dataId(dataId: number, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Product>>;
+    public dataId(dataId: number, observe?: 'body', reportProgress?: boolean): Observable<Room>;
+    public dataId(dataId: number, observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Room>>;
+    public dataId(dataId: number, observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Room>>;
     public dataId(dataId: number, observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         if (dataId === null || dataId === undefined) {
@@ -87,7 +87,7 @@ export class SensorService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<Product>(`${this.basePath}/products/${encodeURIComponent(String(dataId))}`,
+        return this.httpClient.get<Room>(`${this.basePath}/rooms/${encodeURIComponent(String(dataId))}`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
