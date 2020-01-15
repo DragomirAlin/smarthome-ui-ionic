@@ -32,12 +32,12 @@ export class KitchenPage implements OnInit {
 
   switchOn(){
     this.switchService.rooms1ONGet().subscribe(()=>{});
-    console.log("ON");
+  
   }
 
   switchOff(){
     this.switchService.rooms1OFFGet().subscribe(()=>{});
-    console.log("OFF");
+    
   }
 
 

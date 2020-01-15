@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SensorService } from '../api';
+import { SwitchService } from '../api/api/switch.service';
 
 @Component({
   selector: 'app-bedroom',
@@ -11,7 +12,7 @@ export class BedroomPage implements OnInit {
   nivelGaz3: string;
   umiditatea3: number;
  
-  constructor(public sensorService: SensorService) {  }
+  constructor(public sensorService: SensorService, public switchService : SwitchService) {  }
 
   
 
@@ -19,7 +20,7 @@ export class BedroomPage implements OnInit {
 
   ngOnInit() {
     window.setInterval(() => {
-      this.sensorService.dataId(1).subscribe((res) => {
+      this.sensorService.dataId(2).subscribe((res) => {
         this.temperatura3 = res.temperatura
         this.umiditatea3 = res.umiditatea
         this.nivelGaz3 = res.nivelGaz
@@ -29,6 +30,17 @@ export class BedroomPage implements OnInit {
  
     
   }
+
+  switchOn(){
+    this.switchService.rooms2ONGet().subscribe(()=>{});
+    
+  }
+
+  switchOff(){
+    this.switchService.rooms2OFFGet().subscribe(()=>{});
+    
+  }
+
 
 }
 

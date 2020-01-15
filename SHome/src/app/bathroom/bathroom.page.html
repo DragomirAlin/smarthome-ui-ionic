@@ -4,14 +4,38 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-  <div>Camera 1</div>
-  <!-- <button (click)="getData()">Fetch Data</button> -->
-  <div> Temperatura {{ temperatura1 }} </div>
-  <div > Umiditatea {{ umiditatea1 }} </div>
-  <div >Nivelul de gaz {{ nivelGaz1 }}</div>
+  <!-- <ion-card class="welcome-card">
+    <img src="/assets/test.jpg" alt="" />  
+  </ion-card> -->
+
+  
+
+
+    <div class="displayumid">Umiditate: {{umiditatea1}}%</div>
+    <div class="displaytemp">Temperatura: {{temperatura1}}°C</div>
+    <div class="displaygaz">Nivelul de gaz: {{nivelGaz1}}</div>
 
 
     
-</ion-content>
+   <!-- <div class="bottomright" >
+     <div class="lumina">Lumina</div>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+    </div> -->
 
+    <label class='toggle-label'>
+      <input type='checkbox'/>
+        <span class='back'>
+         <span class='toggle'></span>
+          <span class='label on' (click)="switchOn()">ON</span>
+          <span class='label off' (click)="switchOff()">OFF</span>
+         <!-- <span class='label off' onclick()>OFF</span>   -->
+       </span>
+     </label>
+
+
+</ion-content>

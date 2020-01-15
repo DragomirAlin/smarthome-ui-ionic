@@ -26,7 +26,7 @@ import { Configuration }                                     from '../configurat
 @Injectable()
 export class SwitchService {
 
-    protected basePath = 'http://localhost:3000';
+    protected basePath = 'http://192.168.0.100:3000';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 

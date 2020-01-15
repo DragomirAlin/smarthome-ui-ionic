@@ -5,57 +5,29 @@
 </ion-header>
 
 
+<ion-content>
 
-
-  <div class="test">
-    <span class="badge badge-primary">Humidity</span>
-
-    <div class="progress-bar blue stripes">
-      <span role="progressbar" style="width: 90%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{temperatura3}}</span>
-    </div>
-
-    <span class="badge badge-danger">Temperature</span>
-    <div class="progress-bar red stripes ">
-      <span style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></span>
-    </div>
-  </div>
 
   
 
 
+    <div class="displayumid">Umiditate: {{umiditatea3}}%</div>
+    <div class="displaytemp">Temperatura: {{temperatura3}}°C</div>
+    <div class="displaygaz">Nivelul de gaz: {{nivelGaz3}}</div>
 
 
+    
+  
 
-<div class="d-flex align-items-end" style="height: 100%;">
-    <div class="row">
-      <div class="col-6">
-        <div class="border" class="border p-3"> 
-<!--          
-          <div [ngStyle]="{'cube-switch': on ? switch-state off : switch-state on}">
-          <div href="" class="cube-switch">
-             <span class="switch">
-                <span class="switch-state off">Off</span>
-                <span class="switch-state on">On</span>
-            </span>
-            </div>
-          </div> -->
-
-          <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
+    <label class='toggle-label'>
+      <input type='checkbox'/>
+        <span class='back'>
+         <span class='toggle'></span>
+          <span class='label on' (click)="switchOn()">ON</span>
+          <span class='label off' (click)="switchOff()">OFF</span>
+         <!-- <span class='label off' onclick()>OFF</span>   -->
+       </span>
+     </label>
 
 
-     
-      </div>
-      </div>
-
-      <div class="col-6">
-        <div class="border" class="border  p-3">
-            <div id="light-bulb" class="off ui-draggable" ><div id="light-bulb2" style="opacity: 0; "></div></div></div>
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- <div class="light">
-    <img src="/assets/On.png">
-  </div> -->
+</ion-content>
