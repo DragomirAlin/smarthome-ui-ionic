@@ -10,32 +10,27 @@ export class BedroomPage implements OnInit {
   temperatura3: number;
   nivelGaz3: string;
   umiditatea3: number;
+ 
   constructor(public sensorService: SensorService) {  }
+
+  
 
   
 
   ngOnInit() {
     window.setInterval(() => {
-      this.sensorService.dataId(3).subscribe((res) => {
+      this.sensorService.dataId(1).subscribe((res) => {
         this.temperatura3 = res.temperatura
         this.umiditatea3 = res.umiditatea
         this.nivelGaz3 = res.nivelGaz
       })
     }, 2000);
+
+ 
     
   }
 
-//   adaptare event with ngStyle
-//$('.cube-switch .switch').click(function() {
-//     if ($('.cube-switch').hasClass('active')) {
-//         $('.cube-switch').removeClass('active');
-//         $('#light-bulb2').css({'opacity': '0'});
-//     } else {
-//         $('.cube-switch').addClass('active');
-//         $('#light-bulb2').css({'opacity': '1'});
-//     }
-// });
-
-  
 }
+
+
 

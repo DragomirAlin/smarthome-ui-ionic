@@ -4,23 +4,38 @@
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-
-
+  <ion-card class="welcome-card">
+    <img src="/assets/test.jpg" alt="" />  
+  </ion-card>
 
   
 
-    <span class="badge badge-primary" style="width: 40%">Humidity</span>
-  <div class="progress-bar blue stripes">
-    <span role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></span>
-</div>
 
-<span class="badge badge-danger">Temperature</span>
-<div class="progress-bar red stripes">
-  <span style="width: 50%"></span>
-</div>
-<br/>
+    <div class="displayumid">Umiditate: {{umiditatea3}}%</div>
+    <div class="displaytemp">Temperatura: {{temperatura3}}°C</div>
+    <div class="displaygaz">Nivelul de gaz: {{nivelGaz3}}</div>
 
 
-  <img src="/assets/On.png">
+    
+   <!-- <div class="bottomright" >
+     <div class="lumina">Lumina</div>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round"></span>
+    </label>
+    </div> -->
+
+    <label class='toggle-label'>
+      <input type='checkbox'/>
+        <span class='back'>
+         <span class='toggle'></span>
+          <span class='label on' (click)="switchOn()">ON</span>
+          <span class='label off' (click)="switchOff()">OFF</span>
+         <!-- <span class='label off' onclick()>OFF</span>   -->
+       </span>
+     </label>
+
+
 </ion-content>

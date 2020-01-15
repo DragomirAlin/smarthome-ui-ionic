@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SensorService } from '../api/api/sensor.service';
+import { SwitchService } from '../api/api/switch.service';
 
 @Component({
   selector: 'app-kitchen',
@@ -6,10 +8,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./kitchen.page.scss'],
 })
 export class KitchenPage implements OnInit {
+  temperatura3: number;
+  nivelGaz3: string;
+  umiditatea3: number;
+  constructor(public sensorService: SensorService, public switchService : SwitchService) {  }
 
-  constructor() { }
+  
 
   ngOnInit() {
+    window.setInterval(() => {
+      this.sensorService.dataId(1).subscribe((res) => {
+        this.temperatura3 = res.temperatura
+        this.umiditatea3 = res.umiditatea
+        this.nivelGaz3 = res.nivelGaz
+      })
+    }, 2000);
+
+ 
+
+    
   }
 
+
+  switchOn(){
+    this.switchService.rooms1ONGet().subscribe(()=>{});
+    console.log("ON");
+  }
+
+  switchOff(){
+    this.switchService.rooms1OFFGet().subscribe(()=>{});
+    console.log("OFF");
+  }
+
+
 }
+

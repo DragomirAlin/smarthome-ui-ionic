@@ -2,26 +2,7 @@
     max-height: 35vh;
     overflow: hidden;
   }
-  
-  div {
-    position: relative;
-    width:200px;
-    margin:auto;
-    margin-top:10%;
-    
-  
-  }
-  
-  ion-title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0 90px 1px;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-  }
-  
+
   ion-card{
     display: flex;
     flex-direction: column;
@@ -29,94 +10,204 @@
     margin: 0 !important;
   }
   
-  ion-button{
-    width:200px;
+  div {
+    position: relative;
+  
+   
+  
   }
   
-  h1{
-    display: block;
-  font-size: 2em;
   
-  margin-top: 20%;
-  margin-left: 28%;
-  margin-right: 0;
-  font-weight: bold;
+  
+
+
+  .displayumid{
+    background-color: #1A73E8;
+    margin-top: 1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: 2cm;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: larger;
+  }
+
+  
+  .displaytemp{
+    background-color: #FF3F3F;
+    border-radius: 2cm;
+    margin-bottom: 0.5em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: larger;
+  }
+
+  .displaygaz{
+    background-color: #4CAF50;
+    border-radius: 2cm;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: larger;
+  }
+
+  .center{
+    text-align: center;
+    bottom: 10px;
+
+  }
+
+  .bottomright {
+    position: absolute;
+    right: 36px;
+    bottom: 8px;
+   
+    font-size: 18px;
+  }
+  .lumina{
+    left: 12px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: bold;;
   }
   
-  img{
-      margin-left: 10%;
-      margin-top: 5%;
-  }
-
-  .progress-bar {
-    
-    background-color: #1a1a1a;
-    height: 25px;
-    padding: 5px;
-    width: 300px;
-    margin: 50px 0;         
-    border-radius: 5px;
-    box-shadow: 0 1px 5px #000 inset, 0 1px 0 #444;           
-}
-
-.progress-bar span {
-    display: inline-block;
-    height: 100%;
-    border-radius: 3px;
-    box-shadow: 0 1px 0 rgba(255, 255, 255, .5) inset;
-    transition: width .4s ease-in-out;    
-}
-
-.blue span {
-  background-color: #34c2e3;   
-}
-
-.red span {
-  background-color: #FF0000;   
-}
-
-.orange span {
-    background-color: #fecf23;
-    background-image: linear-gradient(top, #fecf23, #fd9215);  
-}   
-
-.green span {
-    background-color: #a5df41;
-    background-image: linear-gradient(top, #a5df41, #4ca916);  
-}
-
-.stripes span {
-  background-size: 30px 30px;
-  background-image: linear-gradient(135deg, rgba(255, 255, 255, .15) 25%, transparent 25%,
-                      transparent 50%, rgba(255, 255, 255, .15) 50%, rgba(255, 255, 255, .15) 75%,
-                      transparent 75%, transparent);            
+/* The switch - the box around the slider */
+.switch {
   
-  animation: animate-stripes 3s linear infinite;             
-}
-
-@keyframes animate-stripes {
-  0% {background-position: 0 0;} 100% {background-position: 60px 0;}
-}
-
-.shine span {
   position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 60px;
+  
 }
 
-.shine span::after {
-  content: '';
+/* Hide default HTML checkbox */
+.switch input {
   opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
   position: absolute;
+  cursor: pointer;
   top: 0;
+  left: 0;
   right: 0;
   bottom: 0;
-  left: 0;
-  background: #fff;
-  border-radius: 3px;
-  animation: animate-shine 2s ease-out infinite;             
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  
 }
 
-@keyframes animate-shine {
-  0% {opacity: 0; width: 0;}
-  50% {opacity: .5;}
-  100% {opacity: 0; width: 95%;}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 53px;
+  width: 66px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  
+}
+
+input:checked + .slider {
+  background-color: #F8B500;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #F8B500;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+// /* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+  border-color: red($color: #000000);
+}
+
+.slider.round:before {
+  border-radius: 50%;
+  border-color: red($color: #000000);
+}
+
+
+//////testtest
+
+.toggle-label {
+  position: relative;
+  display: block;
+  width: 300px;
+  height: 100px;
+  margin-top: 8px;
+  border: 1px solid #808080;
+margin: 200px auto;
+}
+.toggle-label input[type=checkbox] { 
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.toggle-label input[type=checkbox]+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ed1c24;
+  transition: background 150ms linear;  
+}
+.toggle-label input[type=checkbox]:checked+.back {
+  background: #00a651; /*green*/
+}
+
+.toggle-label input[type=checkbox]+.back .toggle {
+  display: block;
+  position: absolute;
+  content: ' ';
+  background: #fff;
+  width: 50%; 
+  height: 100%;
+  transition: margin 150ms linear;
+  border: 1px solid #808080;
+  border-radius: 0;
+}
+.toggle-label input[type=checkbox]:checked+.back .toggle {
+  margin-left: 150px;
+}
+.toggle-label .label {
+  display: block;
+  position: absolute;
+  width: 50%;
+  color: #ddd;
+  line-height: 80px;
+  text-align: center;
+  font-size: 2em;
+}
+.toggle-label .label.on { left: 0px; }
+.toggle-label .label.off { right: 0px; }
+
+.toggle-label input[type=checkbox]:checked+.back .label.on {
+  color: #fff;
+}
+.toggle-label input[type=checkbox]+.back .label.off {
+  color: #fff;
+}
+.toggle-label input[type=checkbox]:checked+.back .label.off {
+  color: #ddd;
 }

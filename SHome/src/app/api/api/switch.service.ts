@@ -18,8 +18,6 @@ import { CustomHttpUrlEncodingCodec }                        from '../encoder';
 
 import { Observable }                                        from 'rxjs/Observable';
 
-import { SwitchOFF } from '../model/switchOFF';
-import { SwitchON } from '../model/switchON';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
 import { Configuration }                                     from '../configuration';
@@ -28,7 +26,7 @@ import { Configuration }                                     from '../configurat
 @Injectable()
 export class SwitchService {
 
-    protected basePath = 'http://192.168.56.1/v2';
+    protected basePath = 'http://localhost:3000';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 
@@ -63,10 +61,10 @@ export class SwitchService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public oFF(observe?: 'body', reportProgress?: boolean): Observable<SwitchOFF>;
-    public oFF(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SwitchOFF>>;
-    public oFF(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SwitchOFF>>;
-    public oFF(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public rooms1OFFGet(observe?: 'body', reportProgress?: boolean): Observable<any>;
+    public rooms1OFFGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<any>>;
+    public rooms1OFFGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<any>>;
+    public rooms1OFFGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
 
@@ -83,7 +81,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<SwitchOFF>(`${this.basePath}/products/LED=OFF`,
+        return this.httpClient.get<any>(`${this.basePath}/rooms/1/OFF`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -99,10 +97,10 @@ export class SwitchService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public oN(observe?: 'body', reportProgress?: boolean): Observable<SwitchON>;
-    public oN(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<SwitchON>>;
-    public oN(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<SwitchON>>;
-    public oN(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public rooms1ONGet(observe?: 'body', reportProgress?: boolean): Observable<any>;
+    public rooms1ONGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<any>>;
+    public rooms1ONGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<any>>;
+    public rooms1ONGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
 
@@ -119,7 +117,151 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<SwitchON>(`${this.basePath}/products/LED=ON`,
+        return this.httpClient.get<any>(`${this.basePath}/rooms/1/ON`,
+            {
+                withCredentials: this.configuration.withCredentials,
+                headers: headers,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * GET switch lights
+     * 
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public rooms2OFFGet(observe?: 'body', reportProgress?: boolean): Observable<any>;
+    public rooms2OFFGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<any>>;
+    public rooms2OFFGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<any>>;
+    public rooms2OFFGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+
+        let headers = this.defaultHeaders;
+
+        // to determine the Accept header
+        let httpHeaderAccepts: string[] = [
+            'application/json'
+        ];
+        const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        if (httpHeaderAcceptSelected != undefined) {
+            headers = headers.set('Accept', httpHeaderAcceptSelected);
+        }
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+        ];
+
+        return this.httpClient.get<any>(`${this.basePath}/rooms/2/OFF`,
+            {
+                withCredentials: this.configuration.withCredentials,
+                headers: headers,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * GET switch lights
+     * 
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public rooms2ONGet(observe?: 'body', reportProgress?: boolean): Observable<any>;
+    public rooms2ONGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<any>>;
+    public rooms2ONGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<any>>;
+    public rooms2ONGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+
+        let headers = this.defaultHeaders;
+
+        // to determine the Accept header
+        let httpHeaderAccepts: string[] = [
+            'application/json'
+        ];
+        const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        if (httpHeaderAcceptSelected != undefined) {
+            headers = headers.set('Accept', httpHeaderAcceptSelected);
+        }
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+        ];
+
+        return this.httpClient.get<any>(`${this.basePath}/rooms/2/ON`,
+            {
+                withCredentials: this.configuration.withCredentials,
+                headers: headers,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * GET switch lights
+     * 
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public rooms3OFFGet(observe?: 'body', reportProgress?: boolean): Observable<any>;
+    public rooms3OFFGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<any>>;
+    public rooms3OFFGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<any>>;
+    public rooms3OFFGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+
+        let headers = this.defaultHeaders;
+
+        // to determine the Accept header
+        let httpHeaderAccepts: string[] = [
+            'application/json'
+        ];
+        const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        if (httpHeaderAcceptSelected != undefined) {
+            headers = headers.set('Accept', httpHeaderAcceptSelected);
+        }
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+        ];
+
+        return this.httpClient.get<any>(`${this.basePath}/rooms/3/OFF`,
+            {
+                withCredentials: this.configuration.withCredentials,
+                headers: headers,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+    /**
+     * GET switch lights
+     * 
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public rooms3ONGet(observe?: 'body', reportProgress?: boolean): Observable<any>;
+    public rooms3ONGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<any>>;
+    public rooms3ONGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<any>>;
+    public rooms3ONGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+
+        let headers = this.defaultHeaders;
+
+        // to determine the Accept header
+        let httpHeaderAccepts: string[] = [
+            'application/json'
+        ];
+        const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        if (httpHeaderAcceptSelected != undefined) {
+            headers = headers.set('Accept', httpHeaderAcceptSelected);
+        }
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+        ];
+
+        return this.httpClient.get<any>(`${this.basePath}/rooms/3/ON`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,

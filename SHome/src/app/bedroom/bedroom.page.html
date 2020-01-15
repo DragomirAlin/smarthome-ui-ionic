@@ -20,8 +20,7 @@
     </div>
   </div>
 
-
-
+  
 
 
 
@@ -30,12 +29,21 @@
 <div class="d-flex align-items-end" style="height: 100%;">
     <div class="row">
       <div class="col-6">
-        <div class="border" class="border p-3">  <div href="" class="cube-switch">
-            <span class="switch">
+        <div class="border" class="border p-3"> 
+<!--          
+          <div [ngStyle]="{'cube-switch': on ? switch-state off : switch-state on}">
+          <div href="" class="cube-switch">
+             <span class="switch">
                 <span class="switch-state off">Off</span>
                 <span class="switch-state on">On</span>
             </span>
-      </div>
+            </div>
+          </div> -->
+
+          <input type="checkbox" checked data-toggle="toggle" data-onstyle="success" data-offstyle="danger">
+
+
+     
       </div>
       </div>
 
@@ -45,6 +53,8 @@
       </div>
     </div>
   </div>
+
+
 
   <!-- <div class="light">
     <img src="/assets/On.png">
