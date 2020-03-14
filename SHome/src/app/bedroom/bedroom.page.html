@@ -1,33 +1,65 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Bedroom</ion-title>
+    <ion-title>Dormitor</ion-title>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
 
+  <ion-card class="welcome-card">
+    <img src="/assets/dormitor.jpg" alt="" />  
+  </ion-card>
 
   
 
+  <div class="displaytemp">Temperatură: {{temperatura2}}°C</div>
+    <div class="displayumid">Umiditate: {{umiditatea2}}%</div>
+    <div class="displaygaz">Nivelul de gaz: {{nivelGaz2}}</div>
 
-    <div class="displayumid">Umiditate: {{umiditatea3}}%</div>
-    <div class="displaytemp">Temperatura: {{temperatura3}}°C</div>
-    <div class="displaygaz">Nivelul de gaz: {{nivelGaz3}}</div>
-
-
+  
     
-  
+   
 
-    <label class='toggle-label'>
+    <!-- <label class='toggle-label'>
       <input type='checkbox'/>
         <span class='back'>
          <span class='toggle'></span>
           <span class='label on' (click)="switchOn()">ON</span>
           <span class='label off' (click)="switchOff()">OFF</span>
-         <!-- <span class='label off' onclick()>OFF</span>   -->
        </span>
-     </label>
+     </label> -->
+     
 
 
-</ion-content>
+
+ 
+
+     <div class="bottomleft" >Întrerupător</div>
+     <div class="mid">
+       
+      <label class="rocker rocker-small">
+        <input type="checkbox">
+        <span class="switch-left" (click)="switchOn()">ON</span>
+        <span class="switch-right" (click)="switchOff()">OFF</span>
+      </label>
+    </div>
+   
+
+     
+
+
+
+
+
+     
+
+  </ion-content>
+
+  <!-- <ion-tabs> -->
+    <ion-tab-bar  >
+      <ion-tab-button routerLink="/bedroom" routerDirection="forward" >Dormitor </ion-tab-button>
+      <ion-tab-button routerLink="/kitchen" routerDirection="forward" >Bucătărie</ion-tab-button>
+      <ion-tab-button routerLink="/bathroom" routerDirection="forward">Baie</ion-tab-button>
+      <ion-tab-button routerLink="/welcome" routerDirection="forward"><ion-icon name="grid"></ion-icon></ion-tab-button>
+    </ion-tab-bar>
+  <!-- </ion-tabs> -->

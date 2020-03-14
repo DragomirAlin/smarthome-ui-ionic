@@ -18,13 +18,13 @@ export class WelcomePage implements OnInit {
         role: 'destructive',
         icon: 'logo-facebook',
         handler: () => {
-          console.log('www.facebook.com');
+          document.location.href = "https://www.facebook.com/DarkAngeL.Ro"
         }
       }, {
-        text: 'Instagram',
-        icon: 'logo-instagram',
+        text: 'LinkedIn',
+        icon: 'logo-linkedin',
         handler: () => {
-          console.log('Share clicked');
+          document.location.href = "https://www.linkedin.com/in/dragomir-daniel-alin-4b04b7171/"
         }
       }, {
         text: 'Youtube',
@@ -36,7 +36,8 @@ export class WelcomePage implements OnInit {
         text: 'Contact',
         icon: 'contact',
         handler: () => {
-          console.log('Favorite clicked');
+          document.location.href = "dragomirdanielalin@gmail.com"
+
         }
       }, {
         text: 'Cancel',

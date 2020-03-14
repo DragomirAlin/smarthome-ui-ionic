@@ -8,9 +8,9 @@ import { SwitchService } from '../api/api/switch.service';
   styleUrls: ['./bathroom.page.scss'],
 })
 export class BathroomPage implements OnInit {
-  temperatura1: number;
-  nivelGaz1: string;
-  umiditatea1: number;
+  temperatura3: number;
+  nivelGaz3: string;
+  umiditatea3: number;
 
 
   constructor(public sensorService: SensorService, public switchService : SwitchService) {  }
@@ -20,33 +20,23 @@ export class BathroomPage implements OnInit {
 
     window.setInterval(() => {
       this.sensorService.dataId(3).subscribe((res) => {
-        this.temperatura1 = res.temperatura
-        this.umiditatea1 = res.umiditatea
-        this.nivelGaz1 = res.nivelGaz
+        this.temperatura3 = res.temperatura
+        this.umiditatea3 = res.umiditatea
+        this.nivelGaz3 = res.nivelGaz
       })
-  
+   
     }, 2000);
-    
-  
-  
-  
-  
-
-
-
 
 
   }
 
-
-  
   switchOn(){
-    this.switchService.rooms3ONGet().subscribe(()=>{});
+    this.switchService.rooms3ONGet().subscribe((res)=>{});
   
   }
 
   switchOff(){
-    this.switchService.rooms3OFFGet().subscribe(()=>{});
+    this.switchService.rooms3OFFGet().subscribe((res)=>{});
     
   }
 

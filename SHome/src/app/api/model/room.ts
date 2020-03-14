@@ -16,5 +16,6 @@ export interface Room {
     temperatura?: number;
     umiditatea?: number;
     nivelGaz?: string;
+    usaIntrare?: string;
     shipDate?: Date;
 }

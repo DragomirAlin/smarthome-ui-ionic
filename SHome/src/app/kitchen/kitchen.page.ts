@@ -8,9 +8,9 @@ import { SwitchService } from '../api/api/switch.service';
   styleUrls: ['./kitchen.page.scss'],
 })
 export class KitchenPage implements OnInit {
-  temperatura3: number;
-  nivelGaz3: string;
-  umiditatea3: number;
+  temperatura1: number;
+  nivelGaz1: string;
+  umiditatea1: number;
   constructor(public sensorService: SensorService, public switchService : SwitchService) {  }
 
   
@@ -18,9 +18,9 @@ export class KitchenPage implements OnInit {
   ngOnInit() {
     window.setInterval(() => {
       this.sensorService.dataId(1).subscribe((res) => {
-        this.temperatura3 = res.temperatura
-        this.umiditatea3 = res.umiditatea
-        this.nivelGaz3 = res.nivelGaz
+        this.temperatura1 = res.temperatura
+        this.umiditatea1 = res.umiditatea
+        this.nivelGaz1 = res.nivelGaz
       })
     }, 2000);
 

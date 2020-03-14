@@ -1,24 +1,35 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-        Administration SHome
+        Administrare camere
     </ion-title>
   </ion-toolbar>
   
 </ion-header>
 
 <ion-content>
-  
-  <ion-card class="welcome-card"> <img src="/assets/smartlogo3.jpg" alt="" />  
+ 
+
+  <ion-card class="welcome-card"> <img src="/assets/rooms.jpg" alt="" />  
   </ion-card>
 
-    <h1>THE ROOMS</h1>
+
   
-   <div><ion-button color="success" shape="round"  expand="full" routerLink="/bedroom" routerDirection="forward">Bedroom</ion-button>  
-    <br/>
-   <ion-button color="tertiary" shape="round" expand="full" routerLink="/kitchen" routerDirection="forward">Kitchen</ion-button>
-    <br/>
-   <ion-button color="danger" shape="round" expand="full" routerLink="/bathroom" routerDirection="forward">Bathroom</ion-button>  </div> 
    
+  <div class="test">Usa: {{usaIntrare}}</div>
+
+
+
+
+
+
+ 
+
 </ion-content>
 
+<ion-tab-bar  >
+  <ion-tab-button routerLink="/bedroom" routerDirection="forward" >Dormitor </ion-tab-button>
+  <ion-tab-button routerLink="/kitchen" routerDirection="forward" >Bucătărie</ion-tab-button>
+  <ion-tab-button routerLink="/bathroom" routerDirection="forward">Baie</ion-tab-button>
+  <ion-tab-button routerLink="/welcome" routerDirection="forward"><ion-icon name="grid"></ion-icon></ion-tab-button>
+</ion-tab-bar>
