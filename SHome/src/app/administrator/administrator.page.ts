@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { SensorService } from '../api';
 import { SwitchService } from '../api/api/switch.service';
-import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';
+import { ActionSheetController } from '@ionic/angular';
+import { MemoService } from '../api/api/memo.service'
+
+
+
 
 @Component({
   selector: 'app-administrator',
@@ -9,38 +13,33 @@ import { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-m
   styleUrls: ['./administrator.page.scss'],
 })
 export class AdministratorPage implements OnInit {
-
   usaIntrare: String;
+  memory : String;
 
-
-  constructor(public sensorService: SensorService, public switchService : SwitchService, private streamingMedia: StreamingMedia) {  }
+  constructor(public actionSheetController: ActionSheetController,  public sensorService: SensorService, public switchService : SwitchService, public memoService : MemoService) {  }
 
   ngOnInit() {
-
-
     window.setInterval(() => {
       this.sensorService.dataId(3).subscribe((res) => {
         this.usaIntrare = res.usaIntrare;
-        
       })
-   
     }, 2000);
+    
+
+    console.log("test");
+
+    this.memoService.memoGet().subscribe((res) => {
+    //  this.memory = JSON.parse(JSON.stringify(res.datas));
+    this.memory = JSON.stringify(res.datas);
+
+    
+    })
+   
+    console.log("telelele" + this.memory);
+
 
   }
-
-  play(){
-    let options: StreamingVideoOptions = {
-      successCallback: () => { console.log('Video played') },
-      errorCallback: (e) => { console.log('Error streaming') },
-      orientation: 'portait',
-      shouldAutoClose: true,
-      controls: true
-      
-    };
-
-    this.streamingMedia.playVideo("http://clips.vorwaerts-gmbh.de/VfE_html5.mp4", options);
+  stream(){
+      document.location.href = "http://192.168.0.102:8080/stream"
   }
-
-  
-
 }

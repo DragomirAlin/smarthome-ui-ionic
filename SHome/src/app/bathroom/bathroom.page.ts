@@ -16,28 +16,21 @@ export class BathroomPage implements OnInit {
   constructor(public sensorService: SensorService, public switchService : SwitchService) {  }
 
   ngOnInit() {
-
-
     window.setInterval(() => {
       this.sensorService.dataId(3).subscribe((res) => {
         this.temperatura3 = res.temperatura
         this.umiditatea3 = res.umiditatea
         this.nivelGaz3 = res.nivelGaz
       })
-   
     }, 2000);
-
-
   }
 
   switchOn(){
     this.switchService.rooms3ONGet().subscribe((res)=>{});
-  
   }
 
   switchOff(){
     this.switchService.rooms3OFFGet().subscribe((res)=>{});
-    
   }
 
 }

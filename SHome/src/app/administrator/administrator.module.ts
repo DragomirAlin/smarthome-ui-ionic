@@ -23,7 +23,9 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   providers: [
+  
     StreamingMedia
+    
   ],
   declarations: [AdministratorPage]
 })

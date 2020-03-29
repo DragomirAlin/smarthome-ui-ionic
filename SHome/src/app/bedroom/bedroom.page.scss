@@ -1,34 +1,134 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:600');
+
+@import "~bootstrap/scss/bootstrap";
+@import "bootstrap";
+
+body {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+:root {
+  --input-padding-x: 1.5rem;
+  --input-padding-y: .75rem;
+}
 
 
+.icon{
+  width: 50px;
+  height: 50px;
+}
 
-.welcome-card img {
-    max-height: 35vh;
-    height: 230px;
-    overflow: hidden;
-  }
+ion-title{
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: larger;
+}
 
-  ion-card{
-    display: flex;
-    flex-direction: column;
-    width: 100% !important;
-    margin: 0 !important;
-  }
+.icons{
+  margin-left: 15%;
+  margin-top: 10%;
+  width: 90px;
+  height: 90px;
+ 
+}
+
+.data{
+  font-size: 30px;
+  font-weight: 400;
+  text-align: right;
+  font-family:  Tahoma, Helvetica, Arial, Sans-Serif;
+  margin-bottom: 1em;
+
   
-  ion-title {
-    background-color: #4169E1 ;
-    color: white;
-    font-size: x-large;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0 90px 1px;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-  }
+}
+.box {
+  position: absolute;
+  width: 100%;
+  text-align: left;
+  font-size: 30px;}
 
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  height: 150px;
+  width: 170px;
+  background-color:white;
+  bottom: 2em;
+}
+
+.card-signin2 {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  height: 150px;
+  width: 170px;
+  background-color: white;
+  bottom: 2em;
+}
+  
+
+.card-signin3 {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  height: 150px;
+  width: 170px;
+  background-color: white;
+  bottom: 6em;
+}
+
+.card-signin4 {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  height: 100px;
+  width: 370px;
+  background-color: white;
+  bottom: 4em;
+}
+
+.intrerupator{
+  font-size: 25px;
+  font-weight: 400;
+  font-family:  Tahoma, Helvetica, Arial, Sans-Serif;
+  text-align: left;
+}
+
+// .card-signin .card-title {
+//   margin-bottom: 2rem;
+//   font-weight: 400;
+//   font-size: 1.5rem;
+// }
+
+// .card-signin .card-body {
+//   padding: 2rem;
+// }
+
+.form-signin {
+  font-size: 30px;
+  font-weight: 400;
+  text-align: right;
+  font-family:  Tahoma, Helvetica, Arial, Sans-Serif;
+}
+
+.form-signin1 {
+  font-size: 25px;
+  font-weight: 400;
+  font-family:  Tahoma, Helvetica, Arial, Sans-Serif;
+}
+// .form-signin .btn {
+//   font-size: 80%;
+//   border-radius: 5rem;
+//   letter-spacing: .1rem;
+//   font-weight: bold;
+//   padding: 1rem;
+//   transition: all 0.2s;
+// }
+
+
+
+  
   ion-tab-button{
     font-size: 15px;
   --background-focused: #4169E1;
@@ -40,248 +140,58 @@
   --margin-right:0px;
   }
   
-  .displayumid{
-    background-color: #1A73E8;
-    border-radius: 2cm;
-    margin-bottom: 0.5em;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    border-radius: 2cm;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    font-size: larger;
+  ion-tab-button:focus {
+    ion-icon, ion-label {
+        color: var(--ion-color-primary) !important;
+        --ion-color-base: var(--ion-color-primary) !important;
+    }
   }
 
-  .displaytemp{
-    background-color: #FF3F3F;
-    
-
-    margin-top: 1em;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    margin-bottom: 0.5em;
-    border-radius: 2cm;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    font-size: larger;
+  $color_checkbox_info: #FFDE00;
+  $color_checkbox_default:#8E8E93;
+  $transition: .3s linear;
+  $width: 120px;
+  $height: $width/2;
+  .wrapper {
+   position: relative;
+    top: 50%;
+    left: 110%;
+    transform: translate(-50%, -50%)
   }
-
-  .displaygaz{
-    background-color: #4CAF50;
-    border-radius: 2cm;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    color: white;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    font-size: larger;
-  }
-
-.lumina{
-  background-color: gray;
-    border-radius: 2cm;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    color: b;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-align: center;
-    font-size: larger;
-    line-height: 1.5;
-    display: flex;
-}
   
-
-
-
-
-
-// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// html {
-//   box-sizing: border-box;
-//   font-family: 'Arial', sans-serif;
-//   font-size: 100%;
-// }
-// *, *:before, *:after {
-//   box-sizing: inherit;
-//   margin:0;
-//   padding:0;
-// }
-
-
-.bottomleft {
-  position: absolute;
-  bottom: 40px;
-  left: 30px;
-  font-weight: 500;
-  // background-color: #ccc;
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  border-bottom: dashed;
-  border-top: dashed;
-  border-left: dashed;
-  border-right: dashed;
-  padding: 0.2em;
-  letter-spacing: 1px;
-  font-weight: 500;
-}
-
-.mid {
-  display: flex;
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  align-items: center;
-  justify-content: center;
-  padding-top:1em;
-  position: left ;
-}
-
-
-/* Switch starts here */
-.rocker {
-  display: inline-block;
-  position: relative;
-  /*
-  SIZE OF SWITCH
-  ==============
-  All sizes are in em - therefore
-  changing the font-size here
-  will change the size of the switch.
-  See .rocker-small below as example.
-  */
-  font-size: 2em;
-  font-weight: bold;
-  text-align: center;
-  text-transform: uppercase;
-  color: #888;
-  width: 7em;
-  height: 4em;
-  overflow: hidden;
-  border-bottom: 0.5em solid #eee;
-}
-
-.rocker-small {
-  font-size: 0.75em; /* Sizes the switch */
-  margin: 1em;
-}
-
-.rocker::before {
-  content: "";
-  position: absolute;
-  top: 0.5em;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #999;
-  border: 0.5em solid #eee;
-  border-bottom: 0;
-}
-
-.rocker input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.switch-left,
-.switch-right {
-  cursor: pointer;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 2.5em;
-  width: 3em;
-  transition: 0.2s;
-}
-
-.switch-left {
-  height: 2.4em;
-  width: 2.75em;
-  left: 0.85em;
-  bottom: 0.4em;
-  background-color: #ddd;
-  transform: rotate(15deg) skewX(15deg);
-}
-
-.switch-right {
-  right: 0.5em;
-  bottom: 0;
-  background-color: #bd5757;
-  color: #fff;
-}
-
-.switch-left::before,
-.switch-right::before {
-  content: "";
-  position: absolute;
-  width: 0.4em;
-  height: 2.45em;
-  bottom: -0.45em;
-  background-color: #ccc;
-  transform: skewY(-65deg);
-}
-
-.switch-left::before {
-  left: -0.4em;
-}
-
-.switch-right::before {
-  right: -0.375em;
-  background-color: transparent;
-  transform: skewY(65deg);
-}
-
-input:checked + .switch-left {
-  background-color: #0084d0;
-  color: #fff;
-  bottom: 0px;
-  left: 0.5em;
-  height: 2.5em;
-  width: 3em;
-  transform: rotate(0deg) skewX(0deg);
-}
-
-input:checked + .switch-left::before {
-  background-color: transparent;
-  width: 3.0833em;
-}
-
-input:checked + .switch-left + .switch-right {
-  background-color: #ddd;
-  color: #888;
-  bottom: 0.4em;
-  right: 0.8em;
-  height: 2.4em;
-  width: 2.75em;
-  transform: rotate(-15deg) skewX(-15deg);
-}
-
-input:checked + .switch-left + .switch-right::before {
-  background-color: #ccc;
-}
-
-/* Keyboard Users */
-input:focus + .switch-left {
-  color: #333;
-}
-
-input:checked:focus + .switch-left {
-  color: #fff;
-}
-
-input:focus + .switch-left + .switch-right {
-  color: #fff;
-}
-
-input:checked:focus + .switch-left + .switch-right {
-  color: #333;
-}
-
+  .toggle{
+     .toggle_shape{
+        width: $width;
+        height: $height;
+        display: block;
+       border: 2px solid $color_checkbox_default;
+       border-radius: $height;
+       background-color: rgba(0, 0, 0, .1);
+       position: relative;
+       &:after{
+         transition: $transition;
+         content: "";
+         width: $width/2;
+         height: $height;
+         display: block;
+         background-color: #fff;
+         border-radius: 50%;
+         box-shadow: 2px 3px 2px rgba(0, 0, 0, .4);
+         position: absolute;
+         top: 0;
+         left: 0;
+         transition: $transition;
+       }
+     }
+     
+    input[type = "checkbox"] {
+      display: none;
+      &:checked + .toggle_shape{
+        border-color: $color_checkbox_info;
+        background-color: $color_checkbox_info;
+        &:after{
+          left: $width/2;
+        }
+      }
+    }  
+  }

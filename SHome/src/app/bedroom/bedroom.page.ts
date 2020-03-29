@@ -14,10 +14,6 @@ export class BedroomPage implements OnInit {
  
   constructor(public sensorService: SensorService, public switchService : SwitchService) {  }
 
-  
-
-  
-
   ngOnInit() {
     window.setInterval(() => {
       this.sensorService.dataId(2).subscribe((res) => {
@@ -26,22 +22,15 @@ export class BedroomPage implements OnInit {
         this.nivelGaz2 = res.nivelGaz
       })
     }, 2000);
-
- 
-    
   }
 
   switchOn(){
     this.switchService.rooms2ONGet().subscribe(()=>{});
-    
   }
 
   switchOff(){
     this.switchService.rooms2OFFGet().subscribe(()=>{});
-    
   }
-
-
 }
 
 

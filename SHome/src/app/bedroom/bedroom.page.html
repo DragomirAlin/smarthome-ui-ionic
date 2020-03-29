@@ -1,40 +1,96 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Dormitor</ion-title>
+    <ion-title>DORMITOR</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+            <div class="card card-signin my-5">
+              <div class="card-body">
+                <h5 class="card-title text-center">Temperatură</h5>
+                <form class="form-signin">
+                  <hr>
+                  <img class="icon" src="/assets/temp.png">
+                  25°C 
+                 
+                </form>
+              </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card card-signin2 my-5">
+              <div class="card-body">
+                <h5 class="card-title text-center">Umiditate</h5>
+                <form class="form-signin">
+                  <hr>
+                  <img class="icon" src="/assets/umid.png">
+                  25%
+                </form>
+              </div>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col">
+          <div class="card card-signin3 my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">Nivel gaz</h5>
+              <form class="form-signin1">
+                <hr>
+                <img class="icon" src="/assets/gas.png">
 
-  <ion-card class="welcome-card">
-    <img src="/assets/dormitor.jpg" alt="" />  
-  </ion-card>
+                scazut
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card card-signin3 my-5">
+              <div class="card-body">
+                <form class="form-signin1">
+                  <img class="icons" src="/assets/add.png">
+                </form>
+              </div>
+            </div>
+        </div>
+        
+        <div class="w-100"></div>
+      <div class="col">
+      <div class="card card-signin4 my-5">
+        <div class="card-body">
+          <h5 class="intrerupator">Lumină</h5>
+          <form class="form-signin1">
+            <!-- <label class="rocker rocker-small">
+              <input type="checkbox">
+              <span class="switch-left" (click)="switchOn()">ON</span>
+              <span class="switch-right" (click)="switchOff()">OFF</span> -->
+            <!-- </label> -->
+            <div class="wrapper">
+              <label class="toggle">
+                <input type="checkbox"/>
+                
+                <div class="toggle_shape"></div>
+              </label>
+          </div>
+          </form>
+        </div>
+      </div>
 
-  
 
-  <div class="displaytemp">Temperatură: {{temperatura2}}°C</div>
-    <div class="displayumid">Umiditate: {{umiditatea2}}%</div>
-    <div class="displaygaz">Nivelul de gaz: {{nivelGaz2}}</div>
+    </div>
+    </div>
+    </div>
 
-  
     
-   
-
-    <!-- <label class='toggle-label'>
-      <input type='checkbox'/>
-        <span class='back'>
-         <span class='toggle'></span>
-          <span class='label on' (click)="switchOn()">ON</span>
-          <span class='label off' (click)="switchOff()">OFF</span>
-       </span>
-     </label> -->
-     
-
-
-
  
+  
 
-     <div class="bottomleft" >Întrerupător</div>
+  
+
+     <!-- <div class="bottomleft" >Întrerupător</div>
      <div class="mid">
        
       <label class="rocker rocker-small">
@@ -42,24 +98,17 @@
         <span class="switch-left" (click)="switchOn()">ON</span>
         <span class="switch-right" (click)="switchOff()">OFF</span>
       </label>
-    </div>
-   
+    </div> -->
 
-     
+    </body>
+  </ion-content> 
 
+ 
 
-
-
-
-     
-
-  </ion-content>
-
-  <!-- <ion-tabs> -->
     <ion-tab-bar  >
       <ion-tab-button routerLink="/bedroom" routerDirection="forward" >Dormitor </ion-tab-button>
       <ion-tab-button routerLink="/kitchen" routerDirection="forward" >Bucătărie</ion-tab-button>
       <ion-tab-button routerLink="/bathroom" routerDirection="forward">Baie</ion-tab-button>
       <ion-tab-button routerLink="/welcome" routerDirection="forward"><ion-icon name="grid"></ion-icon></ion-tab-button>
     </ion-tab-bar>
-  <!-- </ion-tabs> -->
+

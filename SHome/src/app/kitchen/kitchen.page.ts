@@ -13,8 +13,6 @@ export class KitchenPage implements OnInit {
   umiditatea1: number;
   constructor(public sensorService: SensorService, public switchService : SwitchService) {  }
 
-  
-
   ngOnInit() {
     window.setInterval(() => {
       this.sensorService.dataId(1).subscribe((res) => {
@@ -23,23 +21,14 @@ export class KitchenPage implements OnInit {
         this.nivelGaz1 = res.nivelGaz
       })
     }, 2000);
-
- 
-
-    
   }
-
 
   switchOn(){
     this.switchService.rooms1ONGet().subscribe(()=>{});
-  
   }
 
   switchOff(){
     this.switchService.rooms1OFFGet().subscribe(()=>{});
-    
   }
-
-
 }
 

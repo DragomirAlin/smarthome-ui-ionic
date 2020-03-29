@@ -11,6 +11,6 @@
  */
 
 
-export interface SwitchOFF { 
-    OFF?: string;
+export interface Memo { 
+    datas?: string;
 }

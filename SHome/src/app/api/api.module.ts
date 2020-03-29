@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { SensorService } from './api/sensor.service';
 import { SwitchService } from './api/switch.service';
+import { MemoService } from './api/memo.service';
 
 @NgModule({
   imports:      [HttpClientModule],
@@ -13,7 +14,9 @@ import { SwitchService } from './api/switch.service';
   exports:      [],
   providers: [
     SensorService,
-    SwitchService ]
+    SwitchService,
+    MemoService
+     ]
 })
 export class ApiModule {
     public static forRoot(configurationFactory: () => Configuration): ModuleWithProviders {

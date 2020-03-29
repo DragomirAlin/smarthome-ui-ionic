@@ -54,7 +54,4 @@ export class WelcomePage implements OnInit {
   ngOnInit() {
   }
 
-
-
-
 }
