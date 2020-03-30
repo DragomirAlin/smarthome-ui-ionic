@@ -28,12 +28,12 @@ export class AdministratorPage implements OnInit {
 
     console.log("test");
 
-    this.memoService.memoGet().subscribe((res) => {
-    //  this.memory = JSON.parse(JSON.stringify(res.datas));
-    this.memory = JSON.stringify(res.datas);
+    // this.memoService.memoGet().subscribe((res) => {
+    // //  this.memory = JSON.parse(JSON.stringify(res.datas));
+    // this.memory = JSON.stringify(res.datas);
 
     
-    })
+    // })
    
     console.log("telelele" + this.memory);
 

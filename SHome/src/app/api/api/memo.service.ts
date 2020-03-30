@@ -82,7 +82,7 @@ export class MemoService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<Memo>(`${this.basePath}/OS/H`,
+        return this.httpClient.get<Memo>(`${this.basePath}/SI/OS`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,

@@ -12,5 +12,6 @@
 
 
 export interface Memo { 
-    datas?: string;
+    platform?: string;
+    hostname?: string;
 }
