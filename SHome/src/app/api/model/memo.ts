@@ -12,6 +12,21 @@
 
 
 export interface Memo { 
-    platform?: string;
-    hostname?: string;
+    platform?: string; // OS
+    hostname?: string; // OS
+    ip4? : string, //network
+    speed? : string, //network
+    dhcp? : string //network
+    device?: string, // filesystem
+    size?: string, // filesystem
+    currentload?: string, // current Load
+    currentsystem?: string, // current Load
+    total?: string, // Memory
+    free?: string, // Memory
+    used?: string, // Memory
+    main?: string, // temperature CPU
+    localaddress?: string // net conex
+    localport?: string // net conex
+
+
 }

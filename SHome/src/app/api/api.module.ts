@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { SensorService } from './api/sensor.service';
 import { SwitchService } from './api/switch.service';
-import { MemoService } from './api/memo.service';
+import { RaspiService } from './api/raspi.service';
 
 @NgModule({
   imports:      [HttpClientModule],
@@ -15,7 +15,7 @@ import { MemoService } from './api/memo.service';
   providers: [
     SensorService,
     SwitchService,
-    MemoService
+    RaspiService
      ]
 })
 export class ApiModule {

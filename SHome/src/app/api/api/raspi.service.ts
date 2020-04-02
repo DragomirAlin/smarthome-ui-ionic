@@ -18,15 +18,16 @@ import { CustomHttpUrlEncodingCodec }                        from '../encoder';
 
 import { Observable }                                        from 'rxjs/Observable';
 
+import { Memo } from '../model/memo';
 
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
 import { Configuration }                                     from '../configuration';
 
 
 @Injectable()
-export class SwitchService {
+export class RaspiService {
 
-    protected basePath = 'http://localhost:3000';
+    protected basePath = 'http://localhost:3000/raspi';
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 
@@ -56,21 +57,21 @@ export class SwitchService {
 
 
     /**
-     * GET switch lights
+     * GET Operating System information about Raspberry PI 3 B+
      * 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public rooms1OFFGet(observe?: 'body', reportProgress?: boolean): Observable<any>;
-    public rooms1OFFGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<any>>;
-    public rooms1OFFGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<any>>;
-    public rooms1OFFGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public osInfoGet(observe?: 'body', reportProgress?: boolean): Observable<Memo>;
+    public osInfoGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Memo>>;
+    public osInfoGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Memo>>;
+    public osInfoGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
-            'text/html'
+            'text/plain'
         ];
         const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         if (httpHeaderAcceptSelected != undefined) {
@@ -81,7 +82,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/rooms/1/OFF`,
+        return this.httpClient.get<Memo>(`${this.basePath}/OS`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -91,22 +92,22 @@ export class SwitchService {
         );
     }
 
-    /**
-     * GET switch lights
+ /**
+     * GET Network information about Raspberry PI 3 B+
      * 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public rooms1ONGet(observe?: 'body', reportProgress?: boolean): Observable<any>;
-    public rooms1ONGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<any>>;
-    public rooms1ONGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<any>>;
-    public rooms1ONGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public netGet(observe?: 'body', reportProgress?: boolean): Observable<Memo>;
+    public netGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Memo>>;
+    public netGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Memo>>;
+    public netGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
-            'text/html'
+            'text/plain'
         ];
         const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         if (httpHeaderAcceptSelected != undefined) {
@@ -117,7 +118,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/rooms/1/ON`,
+        return this.httpClient.get<Memo>(`${this.basePath}/NET`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -127,22 +128,24 @@ export class SwitchService {
         );
     }
 
-    /**
-     * GET switch lights
+
+
+ /**
+     * GET File System information about Raspberry PI 3 B+
      * 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public rooms2OFFGet(observe?: 'body', reportProgress?: boolean): Observable<any>;
-    public rooms2OFFGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<any>>;
-    public rooms2OFFGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<any>>;
-    public rooms2OFFGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public filesystGet(observe?: 'body', reportProgress?: boolean): Observable<Memo>;
+    public filesystGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Memo>>;
+    public filesystGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Memo>>;
+    public filesystGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
-            'text/html'
+            'text/plain'
         ];
         const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         if (httpHeaderAcceptSelected != undefined) {
@@ -153,7 +156,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/rooms/2/OFF`,
+        return this.httpClient.get<Memo>(`${this.basePath}/FS`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -163,22 +166,22 @@ export class SwitchService {
         );
     }
 
-    /**
-     * GET switch lights
+/**
+     * GET Process Load information about Raspberry PI 3 B+
      * 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public rooms2ONGet(observe?: 'body', reportProgress?: boolean): Observable<any>;
-    public rooms2ONGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<any>>;
-    public rooms2ONGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<any>>;
-    public rooms2ONGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public processLoadGet(observe?: 'body', reportProgress?: boolean): Observable<Memo>;
+    public processLoadGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Memo>>;
+    public processLoadGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Memo>>;
+    public processLoadGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
-            'text/html'
+            'text/plain'
         ];
         const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         if (httpHeaderAcceptSelected != undefined) {
@@ -189,7 +192,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/rooms/2/ON`,
+        return this.httpClient.get<Memo>(`${this.basePath}/PL`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -199,22 +202,22 @@ export class SwitchService {
         );
     }
 
-    /**
-     * GET switch lights
+/**
+     * GET Memory information about Raspberry PI 3 B+
      * 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public rooms3OFFGet(observe?: 'body', reportProgress?: boolean): Observable<any>;
-    public rooms3OFFGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<any>>;
-    public rooms3OFFGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<any>>;
-    public rooms3OFFGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public memoryGet(observe?: 'body', reportProgress?: boolean): Observable<Memo>;
+    public memoryGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Memo>>;
+    public memoryGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Memo>>;
+    public memoryGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
-            'text/html'
+            'text/plain'
         ];
         const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         if (httpHeaderAcceptSelected != undefined) {
@@ -225,7 +228,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/rooms/3/OFF`,
+        return this.httpClient.get<Memo>(`${this.basePath}/MEM`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -235,22 +238,22 @@ export class SwitchService {
         );
     }
 
-    /**
-     * GET switch lights
+/**
+     * GET CPU information about Raspberry PI 3 B+
      * 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public rooms3ONGet(observe?: 'body', reportProgress?: boolean): Observable<any>;
-    public rooms3ONGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<any>>;
-    public rooms3ONGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<any>>;
-    public rooms3ONGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public cpuGet(observe?: 'body', reportProgress?: boolean): Observable<Memo>;
+    public cpuGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Memo>>;
+    public cpuGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Memo>>;
+    public cpuGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
-            'text/html'
+            'text/plain'
         ];
         const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         if (httpHeaderAcceptSelected != undefined) {
@@ -261,7 +264,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/rooms/3/ON`,
+        return this.httpClient.get<Memo>(`${this.basePath}/CPU`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -271,22 +274,22 @@ export class SwitchService {
         );
     }
 
-     /**
-     * GET switch lights
+/**
+     * GET Docker information about Raspberry PI 3 B+
      * 
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public streamVideoH264Get(observe?: 'body', reportProgress?: boolean): Observable<any>;
-    public streamVideoH264Get(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<any>>;
-    public streamVideoH264Get(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<any>>;
-    public streamVideoH264Get(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+    public dockerGet(observe?: 'body', reportProgress?: boolean): Observable<Memo>;
+    public dockerGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Memo>>;
+    public dockerGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Memo>>;
+    public dockerGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
 
         let headers = this.defaultHeaders;
 
         // to determine the Accept header
         let httpHeaderAccepts: string[] = [
-            'image/jpeg'
+            'text/plain'
         ];
         const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
         if (httpHeaderAcceptSelected != undefined) {
@@ -297,7 +300,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/stream/video.h264`,
+        return this.httpClient.get<Memo>(`${this.basePath}/Docker`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -307,5 +310,40 @@ export class SwitchService {
         );
     }
 
+/**
+     * GET Network Connexion information about Raspberry PI 3 B+
+     * 
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public netConGet(observe?: 'body', reportProgress?: boolean): Observable<Memo>;
+    public netConGet(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<Memo>>;
+    public netConGet(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<Memo>>;
+    public netConGet(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+
+        let headers = this.defaultHeaders;
+
+        // to determine the Accept header
+        let httpHeaderAccepts: string[] = [
+            'text/plain'
+        ];
+        const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        if (httpHeaderAcceptSelected != undefined) {
+            headers = headers.set('Accept', httpHeaderAcceptSelected);
+        }
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+        ];
+
+        return this.httpClient.get<Memo>(`${this.basePath}/netCon`,
+            {
+                withCredentials: this.configuration.withCredentials,
+                headers: headers,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
 
 }

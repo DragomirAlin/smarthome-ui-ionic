@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SensorService } from '../api';
 import { SwitchService } from '../api/api/switch.service';
 import { ActionSheetController } from '@ionic/angular';
-import { MemoService } from '../api/api/memo.service'
+import { RaspiService } from '../api/api/raspi.service'
 
 
 
@@ -16,7 +16,7 @@ export class AdministratorPage implements OnInit {
   usaIntrare: String;
   memory : String;
 
-  constructor(public actionSheetController: ActionSheetController,  public sensorService: SensorService, public switchService : SwitchService, public memoService : MemoService) {  }
+  constructor(public actionSheetController: ActionSheetController,  public sensorService: SensorService, public switchService : SwitchService, public memoService : RaspiService) {  }
 
   ngOnInit() {
     window.setInterval(() => {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MemoService } from '../api/api/memo.service'
+import { RaspiService } from '../api/api/raspi.service'
 
 @Component({
   selector: 'app-raspi',
@@ -9,17 +9,43 @@ import { MemoService } from '../api/api/memo.service'
 export class RaspiPage implements OnInit {
   hostname : String;
   platform: String;
+  ip4 : String;
+  speed: String;
+  dhcp: String;
+  free: String;
+  currentSystem : String;
+  localadd : String;
+  localport: String;
 
-  constructor(public memoService : MemoService) { }
+  constructor(public raspiService : RaspiService) { }
 
   ngOnInit() {
 
 
-    this.memoService.memoGet().subscribe((res) => {
-      //  this.memory = JSON.parse(JSON.stringify(res.datas));
+    this.raspiService.osInfoGet().subscribe((res) => {
       this.platform = res.platform;
       this.hostname = res.hostname;
 
     })
+
+    this.raspiService.netGet().subscribe((res) =>{
+      this.ip4 = res.ip4;
+      this.speed = res.speed;
+      this.dhcp = res.dhcp;
+    })
+
+    this.raspiService.memoryGet().subscribe((res) =>{
+      this.free = res.free;
+    })
+
+    this.raspiService.processLoadGet().subscribe((res) =>{
+      this.currentSystem = res.currentsystem;
+    })
+
+    this.raspiService.netConGet().subscribe((res)=>{
+      this.localadd = res.localaddress;
+      this.localport = res.localport;
+    })
+
   }
 }
