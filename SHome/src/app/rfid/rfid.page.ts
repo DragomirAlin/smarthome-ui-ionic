@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy,  Input } from '@angular/core';
 import { RfidService } from '../api/api/rfid.service'
+import {PageEvent} from '@angular/material/paginator';
 
 @Component({
   selector: 'app-rfid',
@@ -7,8 +8,23 @@ import { RfidService } from '../api/api/rfid.service'
   styleUrls: ['./rfid.page.scss'],
 })
 export class RfidPage implements OnInit {
- 
-  users =[];
+ // MatPaginator Inputs
+ length = 100;
+ pageSize = 10;
+ pageSizeOptions: number[] = [5, 10, 25, 100];
+
+ // MatPaginator Output
+ pageEvent: PageEvent;
+
+ setPageSizeOptions(setPageSizeOptionsInput: string) {
+   if (setPageSizeOptionsInput) {
+     this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+   }
+ }
+
+
+
+ users =[];
 
   constructor(public rfidService : RfidService) { }
 
@@ -16,6 +32,7 @@ export class RfidPage implements OnInit {
     this.rfidService.rfidAllUserGet().subscribe(
       (response: any[])=>
       {
+        
         this.users = response;
         console.log(response)
       },

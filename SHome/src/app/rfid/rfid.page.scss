@@ -1,6 +1,9 @@
 
 @import "~bootstrap/scss/bootstrap";
 @import "bootstrap";
+/* update your 'styles.css' with */
+@import '~bootstrap/dist/css/bootstrap.css';
+
 
 body {
     background-color: #f39f86;
@@ -157,3 +160,7 @@ ion-title{
   }
   
  
+
+  .mat-form-field {
+    margin-right: 12px;
+  }
