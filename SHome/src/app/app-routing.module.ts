@@ -8,7 +8,8 @@ const routes: Routes = [
   { path: 'manager', loadChildren: './manager/manager.module#ManagerPageModule' },
   { path: 'bedroom', loadChildren: './bedroom/bedroom.module#BedroomPageModule' },
   { path: 'kitchen', loadChildren: './kitchen/kitchen.module#KitchenPageModule' },
-  { path: 'bathroom', loadChildren: './bathroom/bathroom.module#BathroomPageModule' },  { path: 'raspi', loadChildren: './raspi/raspi.module#RaspiPageModule' }
+  { path: 'bathroom', loadChildren: './bathroom/bathroom.module#BathroomPageModule' },  { path: 'raspi', loadChildren: './raspi/raspi.module#RaspiPageModule' },
+  { path: 'rfid', loadChildren: './rfid/rfid.module#RfidPageModule' }
 
 
 

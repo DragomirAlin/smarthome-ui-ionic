@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SensorService } from '../api';
 import { SwitchService } from '../api/api/switch.service';
 
+
 @Component({
   selector: 'app-bedroom',
   templateUrl: './bedroom.page.html',
@@ -30,8 +31,13 @@ export class BedroomPage implements OnInit {
 
   switchOff(){
     this.switchService.rooms2OFFGet().subscribe(()=>{});
+
+ 
   }
+
+
 }
+
 
 
 

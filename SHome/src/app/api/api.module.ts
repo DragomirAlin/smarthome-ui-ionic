@@ -7,6 +7,9 @@ import { HttpClient } from '@angular/common/http';
 import { SensorService } from './api/sensor.service';
 import { SwitchService } from './api/switch.service';
 import { RaspiService } from './api/raspi.service';
+import { RfidService } from './api/rfid.service';
+import { LogsService } from './api/logs.service';
+
 
 @NgModule({
   imports:      [HttpClientModule],
@@ -15,7 +18,9 @@ import { RaspiService } from './api/raspi.service';
   providers: [
     SensorService,
     SwitchService,
-    RaspiService
+    RaspiService,
+    RfidService,
+    LogsService
      ]
 })
 export class ApiModule {

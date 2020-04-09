@@ -14,7 +14,7 @@ export class RaspiPage implements OnInit {
   dhcp: String;
   free: String;
   currentSystem : String;
-  localadd : String;
+  localaddress : String;
   localport: String;
 
   constructor(public raspiService : RaspiService) { }
@@ -43,7 +43,7 @@ export class RaspiPage implements OnInit {
     })
 
     this.raspiService.netConGet().subscribe((res)=>{
-      this.localadd = res.localaddress;
+      this.localaddress = res.localaddress;
       this.localport = res.localport;
     })
 

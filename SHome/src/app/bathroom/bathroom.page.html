@@ -1,21 +1,91 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Baie</ion-title>
+    <ion-title>BAIE</ion-title>
   </ion-toolbar>
 </ion-header>
 
-
 <ion-content>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+            <div class="card card-signin my-5">
+              <div class="card-body">
+                <h5 class="card-title text-center">Temperatură</h5>
+                <form class="form-signin">
+                  <hr>
+                  <img class="icon" src="/assets/temp.png">
+                  25°C 
+                 
+                </form>
+              </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card card-signin2 my-5">
+              <div class="card-body">
+                <h5 class="card-title text-center">Umiditate</h5>
+                <form class="form-signin">
+                  <hr>
+                  <img class="icon" src="/assets/umid.png">
+                  25%
+                </form>
+              </div>
+          </div>
+        </div>
+        <div class="w-100"></div>
+        <div class="col">
+          <div class="card card-signin3 my-5">
+            <div class="card-body">
+              <h5 class="card-title text-center">Nivel gaz</h5>
+              <form class="form-signin1">
+                <hr>
+                <img class="icon" src="/assets/gas.png">
 
-  <ion-card class="welcome-card">
-    <img src="/assets/baie.jpg" alt="" />  
-  </ion-card>
+                scazut
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+            <div class="card card-signin3 my-5">
+              <div class="card-body">
+                <form class="form-signin1">
+                  <img class="icons" src="/assets/add.png">
+                </form>
+              </div>
+            </div>
+        </div>
+        
+        <div class="w-100"></div>
+      <div class="col">
+      <div class="card card-signin4 my-5">
+        <div class="card-body">
+          <h5 class="intrerupator">Lumină</h5>
+          <form class="form-signin1">
+            <div class="button">
+              <label class="rocker rocker-small">
+                <input type="checkbox">
+                <span class="switch-left" (click)="switchOn()">ON</span>
+                <span class="switch-right" (click)="switchOff()">OFF</span>
+               </label> 
+              </div>
+          </form>
+        </div>
+      </div>
 
-  <div class="displaytemp">Temperatură: {{temperatura3}}°C</div>
-    <div class="displayumid">Umiditate: {{umiditatea3}}%</div>
-    <div class="displaygaz">Nivelul de gaz: {{nivelGaz3}}</div>
 
-     <div class="bottomleft" >Întrerupător</div>
+    </div>
+    </div>
+    </div>
+
+    
+ 
+  
+
+  
+
+     <!-- <div class="bottomleft" >Întrerupător</div>
      <div class="mid">
        
       <label class="rocker rocker-small">
@@ -23,9 +93,12 @@
         <span class="switch-left" (click)="switchOn()">ON</span>
         <span class="switch-right" (click)="switchOff()">OFF</span>
       </label>
-    </div>
+    </div> -->
 
-  </ion-content>
+    </body>
+  </ion-content> 
+
+ 
 
     <ion-tab-bar  >
       <ion-tab-button routerLink="/bedroom" routerDirection="forward" >Dormitor </ion-tab-button>
@@ -33,3 +106,4 @@
       <ion-tab-button routerLink="/bathroom" routerDirection="forward">Baie</ion-tab-button>
       <ion-tab-button routerLink="/welcome" routerDirection="forward"><ion-icon name="grid"></ion-icon></ion-tab-button>
     </ion-tab-bar>
+

@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Control Acces RFID</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+  <body>
+    <div>
+     
+      <table>
+         <thead>
+            <tr>
+               <th>UID</th>
+               <th>Nume</th>
+               <th>Actiuni</th>
+            
+            </tr>
+         </thead>
+         <tbody>
+            <tr *ngFor="let item of users">
+               <th>{{ item.uid }}</th>
+               <td>{{ item.nume }}</td>
+              
+               <td>
+                  <button type="button" >Edit</button>
+                  <button type="button" >Delete</button>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+
+   </div>
+
+
+
+   
+  <!-- <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>UID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Alin</td>
+        <td>4.3.2.5</td>
+      </tr>
+      <tr>
+        <td>Daniel</td>
+        <td>4.3.3</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Vlad</td>
+        <td>4.3.4.3</td>
+      </tr>
+    </tfoot>
+  </table> -->
+
+  </body>
+<!-- <ion-content></ion-content> -->
+
+
+<ion-tab-bar  >
+  <ion-tab-button routerLink="/bedroom" routerDirection="forward" >Dormitor </ion-tab-button>
+  <ion-tab-button routerLink="/kitchen" routerDirection="forward" >Bucătărie</ion-tab-button>
+  <ion-tab-button routerLink="/bathroom" routerDirection="forward">Baie</ion-tab-button>
+  <ion-tab-button routerLink="/welcome" routerDirection="forward"><ion-icon name="grid"></ion-icon></ion-tab-button>
+</ion-tab-bar>

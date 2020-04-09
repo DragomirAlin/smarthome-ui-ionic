@@ -19,7 +19,7 @@ body {
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
   top: 5px;
-  height: 300px;
+  height: 350px;
   
 }
 
@@ -155,9 +155,9 @@ body {
   background-color: #9A0F36;
 }
 
-.btn-facebook {
-  color: white;
-  background-color: #3b5998;
+.btn-rfid {
+  background-color: #fbb034;
+  background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
 }
 
 /* Fallback for Edge
