@@ -18,16 +18,10 @@ export class LogsPage implements OnInit {
   constructor(public rfidService : LogsService) {
     this.columns = [
       { name: 'nume' },
-      { name: 'data' },
+      { name: 'data' }, 
       { name:'uid'}
-     
     ];
-
-
    }
-
-
-
 
   ngOnInit() {
     this.rfidService.rfidAllLogsGet().subscribe(

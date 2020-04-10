@@ -3,17 +3,27 @@
     <ion-title>Control Acces RFID</ion-title>
   </ion-toolbar>
 </ion-header>
+
+
+
+
 <ion-content>
   <body>
 
-
-
-   
-
-
-
-
-
+    <div class="ion-padding" >
+      <ngx-datatable 
+        class="material"
+        [limit]="4" 
+        [rows]="rows" 
+        [rowHeight]="40" 
+        [columns]="columns"
+        [columnMode]="'force'" 
+        [sortType]="'multi'" 
+        [headerHeight]="30" 
+        [footerHeight]="40">
+      </ngx-datatable>
+    </div>
+  
   </body>
 </ion-content>
   
