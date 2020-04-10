@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy,  Input } from '@angular/core';
 import { RfidService } from '../api/api/rfid.service'
-import {PageEvent} from '@angular/material/paginator';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-rfid',
@@ -10,7 +10,7 @@ import {PageEvent} from '@angular/material/paginator';
 export class RfidPage implements OnInit {
  // MatPaginator Inputs
  length = 100;
- pageSize = 10;
+ pageSize = 5;
  pageSizeOptions: number[] = [5, 10, 25, 100];
 
  // MatPaginator Output

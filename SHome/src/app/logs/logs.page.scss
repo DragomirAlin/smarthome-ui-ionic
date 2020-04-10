@@ -1,8 +1,12 @@
+@import "~bootstrap/scss/bootstrap";
+@import "bootstrap";
+/* update your 'styles.css' with */
+@import '~bootstrap/dist/css/bootstrap.css';
+
+
 body {
-    background-color: #c7053d;
-    // background-image: linear-gradient(315deg, #c7053d 0%, #8cc04b 74%);
-    // background:linear-gradient(120deg, #c7053d, #8cc04b);
-    color: white;
+    background-color: #f39f86;
+    background-image: linear-gradient(315deg, #f39f86 0%, #f9d976 74%);
 }
 
 :root {

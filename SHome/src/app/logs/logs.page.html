@@ -1,23 +1,29 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Control Acces RFID</ion-title>
+    <ion-title>Loguri</ion-title>
   </ion-toolbar>
 </ion-header>
+
+
 <ion-content>
   <body>
 
+  <div class="ion-padding" >
+    <ngx-datatable 
+      class="material"
+      [limit]="5" 
+      [rows]="rows" 
+      [rowHeight]="40" 
+      [columns]="columns"
+      [columnMode]="'force'" 
+      [sortType]="'multi'" 
+      [headerHeight]="30" 
+      [footerHeight]="40">
+    </ngx-datatable>
+  </div>
 
-
-   
-
-
-
-
-
-  </body>
+</body>
 </ion-content>
-  
-
 <ion-tab-bar  >
   <ion-tab-button routerLink="/rfid" routerDirection="forward" >User </ion-tab-button>
   <ion-tab-button routerLink="/logs" routerDirection="forward" >Loguri</ion-tab-button>
