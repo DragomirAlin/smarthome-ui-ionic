@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'kitchen', loadChildren: './kitchen/kitchen.module#KitchenPageModule' },
   { path: 'bathroom', loadChildren: './bathroom/bathroom.module#BathroomPageModule' },  { path: 'raspi', loadChildren: './raspi/raspi.module#RaspiPageModule' },
   { path: 'rfid', loadChildren: './rfid/rfid.module#RfidPageModule' },
-  { path: 'logs', loadChildren: './logs/logs.module#LogsPageModule' }
+  { path: 'logs', loadChildren: './logs/logs.module#LogsPageModule' },
+  { path: 'user', loadChildren: './user/user.module#UserPageModule' }
 
 
 

@@ -12,10 +12,7 @@ body {
   --input-padding-y: .75rem;
 }
 
-.button{
-  margin-top: -2.7em;
-  margin-left: 6.5em;
-}
+
 .icon{
   width: 50px;
   height: 50px;
@@ -41,7 +38,9 @@ ion-title{
   text-align: right;
   font-family:  Tahoma, Helvetica, Arial, Sans-Serif;
   margin-bottom: 1em;
-
+.card-title{
+  font-size: 10px;
+}
   
 }
 .box {
@@ -55,7 +54,7 @@ ion-title{
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
   height: 150px;
-  width: 170px;
+  width: 150px;
   background-color:white;
   bottom: 2em;
 }
@@ -65,7 +64,7 @@ ion-title{
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
   height: 150px;
-  width: 170px;
+  width: 150px;
   background-color: white;
   bottom: 2em;
 }
@@ -76,7 +75,7 @@ ion-title{
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
   height: 150px;
-  width: 170px;
+  width: 150px;
   background-color: white;
   bottom: 6em;
 }
@@ -86,7 +85,7 @@ ion-title{
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
   height: 100px;
-  width: 370px;
+  width: 330px;
   background-color: white;
   bottom: 4em;
 }
@@ -109,14 +108,14 @@ ion-title{
 // }
 
 .form-signin {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 400;
   text-align: right;
   font-family:  Tahoma, Helvetica, Arial, Sans-Serif;
 }
 
 .form-signin1 {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 400;
   font-family:  Tahoma, Helvetica, Arial, Sans-Serif;
 }

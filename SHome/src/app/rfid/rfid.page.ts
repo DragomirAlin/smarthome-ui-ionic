@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy,  Input } from '@angular/core';
 import { RfidService } from '../api/api/rfid.service'
 import { ViewEncapsulation } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -30,6 +31,23 @@ export class RfidPage implements OnInit {
       (error) => console.log(error)
     )
   }
+
+  
+
+  register(f: NgForm) {
+    this.rfidService.addRfid(f.value).subscribe((res)=>
+      {
+       
+    })
+    location.reload()
+
+}
+
+delete(data){
+  this.rfidService.delete(data.uid).subscribe((res=>{console.log(res)}))
+  location.reload()
+}
+
 
   
 }

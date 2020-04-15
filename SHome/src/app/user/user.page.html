@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Control Acces RFID</ion-title>
+    <ion-title>Adaugare Utilizator</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,23 +10,27 @@
 <ion-content>
   <body>
 
-    <div class="ion-padding" >
-      <ngx-datatable 
-        class="material"
-        [limit]="4" 
-        [rows]="rows" 
-        [rowHeight]="40" 
-        [columns]="columns"
-        [columnMode]="'force'" 
-        [sortType]="'multi'" 
-        [headerHeight]="30" 
-        [footerHeight]="40">
-      </ngx-datatable>
-    </div>
+<!-- 
+    <div class="container">
+        <form #myform="ngForm" (ngSubmit)="register(myform)" class="form form-register">
   
+          <div class="form-field">
+                <label  for="register-uid"><span class="hidden">UID</span></label>
+                <input name="uid" id="register-uid" type="email" class="form-input" placeholder="UID" ngModel required>
+          </div>
 
+          <div class="form-field">
+            <label for="register-nume"><span class="hidden">Nume/span></label>
+            <input name="nume" id="register-nume" type="email" class="form-input" placeholder="Nume" ngModel required>
+          </div>
+  
+          <div class="form-field">
+            <input type="submit" value="Register">
+          </div>
+        </form>
+  </div> -->
 
-  <!-- <div class="container">
+  <div class="container">
     <div class="register-item">
       <form #f="ngForm" (ngSubmit)="register(f)" class="form form-register">
 
@@ -44,22 +48,9 @@
         </div>
       </form>
     </div>
-</div> -->
-
-
-<div class="container">
-  <div class="register-item">
-    <form #f="ngForm" (ngSubmit)="delete(f.value)" class="form form-register">
-      <div class="form-field">
-            <label class="user" ><span class="hidden">UID</span></label>
-            <input name="uid" id="uid" type="email" class="form-input" placeholder="UID" ngModel required>
-      </div>
-      <div class="form-field">
-        <input type="submit" value="Delete">
-      </div>
-    </form>
-  </div>
 </div>
+
+
 
 
   </body>
