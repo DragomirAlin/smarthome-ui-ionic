@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { RaspiService } from '../api/api/raspi.service'
 
 @Component({
-  selector: 'app-raspi',
-  templateUrl: './raspi.page.html',
-  styleUrls: ['./raspi.page.scss'],
+  selector: 'app-storge',
+  templateUrl: './storge.page.html',
+  styleUrls: ['./storge.page.scss'],
 })
-export class RaspiPage implements OnInit {
+export class StorgePage implements OnInit {
   hostname : String;
   platform: String;
   ip4 : String;
@@ -17,7 +17,8 @@ export class RaspiPage implements OnInit {
   ssid : String;
   signal: String;
   quality: String;
-
+  total: String;
+  size: String;
   constructor(public raspiService : RaspiService) { }
 
   ngOnInit() {
@@ -37,10 +38,15 @@ export class RaspiPage implements OnInit {
 
     this.raspiService.memoryGet().subscribe((res) =>{
       this.free = res.free;
+      this.total = res.total;
     })
 
     this.raspiService.processLoadGet().subscribe((res) =>{
       this.currentSystem = res.currentsystem;
+    })
+
+    this.raspiService.filesystGet().subscribe((res)=>{
+      this.size = res.size;
     })
 
     this.raspiService.netConGet().subscribe((res)=>{
@@ -50,8 +56,4 @@ export class RaspiPage implements OnInit {
     })
 
   }
-
-  refresh(): void {
-    window.location.reload();
-}
 }

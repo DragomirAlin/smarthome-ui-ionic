@@ -25,8 +25,9 @@ export interface Memo {
     free?: string, // Memory
     used?: string, // Memory
     main?: string, // temperature CPU
-    localaddress?: string // net conex
-    localport?: string // net conex
+    ssid?: string // net conex
+    signal?: string // net conex
+    quality?: string
 
 
 }

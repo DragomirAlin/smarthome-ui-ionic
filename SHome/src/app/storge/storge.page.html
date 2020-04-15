@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Raspberry</ion-title>
+    <ion-title>Raspberry Storge</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,21 +17,8 @@
     <div class="card card-signin my-5">
       <div class="card-body">
         <form class="form-signin">
-        
-          
-          <img src="/assets/wifi.png" /> {{ssid}}
-          <hr>
-          <img src="/assets/ip.png" />{{ip4}}
-          <hr>
-          <img src="/assets/signal.png" />  {{signal}} dB
-          <hr>
-          <img src="/assets/speed.png" />            {{quality}} %
-          <hr>
-          <button (click) ="refresh()">Refresh</button>
-          <!-- <hr class="my-4">
-          <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
-          <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button> -->
-        </form>
+        total : {{size}}
+       </form>
       </div>
     </div>
   </div>

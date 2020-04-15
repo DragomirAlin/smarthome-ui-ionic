@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'bathroom', loadChildren: './bathroom/bathroom.module#BathroomPageModule' },  { path: 'raspi', loadChildren: './raspi/raspi.module#RaspiPageModule' },
   { path: 'rfid', loadChildren: './rfid/rfid.module#RfidPageModule' },
   { path: 'logs', loadChildren: './logs/logs.module#LogsPageModule' },
-  { path: 'user', loadChildren: './user/user.module#UserPageModule' }
+  { path: 'user', loadChildren: './user/user.module#UserPageModule' },
+  { path: 'storge', loadChildren: './storge/storge.module#StorgePageModule' }
 
 
 
