@@ -19,12 +19,6 @@ export class AdministratorPage implements OnInit {
   constructor(public actionSheetController: ActionSheetController,  public sensorService: SensorService, public switchService : SwitchService, public memoService : RaspiService) {  }
 
   ngOnInit() {
-    window.setInterval(() => {
-      this.sensorService.dataId(3).subscribe((res) => {
-        this.usaIntrare = res.usaIntrare;
-      })
-    }, 2000);
-    
 
 
 

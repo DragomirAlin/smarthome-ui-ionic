@@ -15,7 +15,7 @@
                 <form class="form-signin">
                   <hr>
                   <img class="icon" src="/assets/temp.png">
-                  25°C 
+                  {{temperatura2 }}°C
                  
                 </form>
               </div>
@@ -28,7 +28,7 @@
                 <form class="form-signin">
                   <hr>
                   <img class="icon" src="/assets/umid.png">
-                  25%
+              {{umiditatea2}}%
                 </form>
               </div>
           </div>
@@ -38,11 +38,12 @@
           <div class="card card-signin3 my-5">
             <div class="card-body">
               <h6 class="card-title text-center">Nivel gaz</h6>
-              <form class="form-signin1">
+              <form class="form-signin2">
                 <hr>
-                <img class="icon" src="/assets/gas.png">
+                <img class="icon2" src="/assets/gas2.png">
 
-                OK
+                {{nivelGaz2}}
+                
               </form>
             </div>
           </div>
@@ -50,18 +51,46 @@
         <div class="col">
             <div class="card card-signin3 my-5">
               <div class="card-body">
-                <form class="form-signin1">
-                  <img class="icons" src="/assets/add.png">
+                <h6 class="card-title text-center">Stare ușă</h6>
+                <form class="form-signin2">
+                  <hr>
+                  <img class="icon2" src="/assets/door2.png">
+
+                  {{usa}}
+
                 </form>
               </div>
             </div>
         </div>
         
+
+
+        <div class="col">
+          <div class="card card-signin5 my-5">
+            <div class="card-body">
+              <img class="cooler" src="/assets/air4.png"/> Aer condiționat
+         
+              <form class="form-signin1">
+                <div class="button">
+                  <label class="rocker rocker-small">
+                    <input type="checkbox">
+                    <span class="switch-left" (click)="switchOn()">ON</span>
+                    <span class="switch-right" (click)="switchOff()">OFF</span>
+                   </label> 
+                  </div>
+              
+              </form>
+            </div>
+          </div>
+    
+    
+        </div>
+
         <div class="w-100"></div>
       <div class="col">
       <div class="card card-signin4 my-5">
         <div class="card-body">
-          <h5 class="intrerupator">Lumină</h5>
+          <img src="/assets/light2.png"/> Lumină
           <form class="form-signin1">
             <div class="button">
               <label class="rocker rocker-small">
@@ -74,9 +103,8 @@
           </form>
         </div>
       </div>
-
-
     </div>
+    
     </div>
     </div>
 
