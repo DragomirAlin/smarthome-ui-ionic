@@ -27,7 +27,9 @@ import { Configuration }                                     from '../configurat
 @Injectable()
 export class RaspiService {
 
-    protected basePath = 'http://192.168.0.100:3000/raspi';
+    protected basePath = 'http://192.168.0.102:3000/raspi';
+    // protected basePath = 'http://localhost:3000/raspi';
+
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 

@@ -26,7 +26,9 @@ import { Configuration }                                     from '../configurat
 @Injectable()
 export class SwitchService {
 
-    protected basePath = 'http://192.168.0.100:3000';
+    protected basePath = 'http://192.168.0.102:3000';
+    // protected basePath = 'http://localhost:3000';
+
     public defaultHeaders = new HttpHeaders();
     public configuration = new Configuration();
 
@@ -270,6 +272,80 @@ export class SwitchService {
             }
         );
     }
+
+      /**
+     * GET switch lights
+     * 
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getONcooler(observe?: 'body', reportProgress?: boolean): Observable<any>;
+    public getONcooler(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<any>>;
+    public getONcooler(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<any>>;
+    public getONcooler(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+
+        let headers = this.defaultHeaders;
+
+        // to determine the Accept header
+        let httpHeaderAccepts: string[] = [
+            'text/html'
+        ];
+        const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        if (httpHeaderAcceptSelected != undefined) {
+            headers = headers.set('Accept', httpHeaderAcceptSelected);
+        }
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+        ];
+
+        return this.httpClient.get<any>(`${this.basePath}/rooms/AIR/ON`,
+            {
+                withCredentials: this.configuration.withCredentials,
+                headers: headers,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+        /**
+     * GET switch lights
+     * 
+     * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
+     * @param reportProgress flag to report request and response progress.
+     */
+    public getOFFcooler(observe?: 'body', reportProgress?: boolean): Observable<any>;
+    public getOFFcooler(observe?: 'response', reportProgress?: boolean): Observable<HttpResponse<any>>;
+    public getOFFcooler(observe?: 'events', reportProgress?: boolean): Observable<HttpEvent<any>>;
+    public getOFFcooler(observe: any = 'body', reportProgress: boolean = false ): Observable<any> {
+
+        let headers = this.defaultHeaders;
+
+        // to determine the Accept header
+        let httpHeaderAccepts: string[] = [
+            'text/html'
+        ];
+        const httpHeaderAcceptSelected: string | undefined = this.configuration.selectHeaderAccept(httpHeaderAccepts);
+        if (httpHeaderAcceptSelected != undefined) {
+            headers = headers.set('Accept', httpHeaderAcceptSelected);
+        }
+
+        // to determine the Content-Type header
+        const consumes: string[] = [
+        ];
+
+        return this.httpClient.get<any>(`${this.basePath}/rooms/AIR/OFF`,
+            {
+                withCredentials: this.configuration.withCredentials,
+                headers: headers,
+                observe: observe,
+                reportProgress: reportProgress
+            }
+        );
+    }
+
+
 
      /**
      * GET switch lights

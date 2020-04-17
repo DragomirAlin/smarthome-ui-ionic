@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { LogsService } from '../api/api/logs.service'
+import { SensorService} from '../api/api/sensor.service'
 
 @Component({
   selector: 'app-logs',
@@ -13,9 +14,9 @@ import { LogsService } from '../api/api/logs.service'
 export class LogsPage implements OnInit {
   public columns: any;
   public rows: any;
+  usa : string;
 
-
-  constructor(public rfidService : LogsService) {
+  constructor(public rfidService : LogsService, public sensorService : SensorService) {
     this.columns = [
       { name: 'nume' },
       { name: 'data' }, 
@@ -33,6 +34,11 @@ export class LogsPage implements OnInit {
       },
       (error) => console.log(error)
     )
+
+    this.sensorService.dataId(3).subscribe((res)=>{
+      this.usa = res.usa;
+    })
+
   }
 
 }

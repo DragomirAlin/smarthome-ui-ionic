@@ -11,6 +11,8 @@ export class KitchenPage implements OnInit {
   temperatura1: number;
   nivelGaz1: string;
   umiditatea1: number;
+ 
+  foc: string;
   constructor(public sensorService: SensorService, public switchService : SwitchService) {  }
 
   ngOnInit() {
@@ -19,7 +21,11 @@ export class KitchenPage implements OnInit {
         this.temperatura1 = res.temperatura
         this.umiditatea1 = res.umiditatea
         this.nivelGaz1 = res.nivelGaz
+        this.foc = res.foc;
       })
+   
+    
+    
     }, 2000);
   }
 

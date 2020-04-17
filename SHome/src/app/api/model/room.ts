@@ -17,5 +17,7 @@ export interface Room {
     umiditatea?: number;
     nivelGaz?: string;
     usa?: string;
+    foc?: string;
+    aer?: number;
     shipDate?: Date;
 }
