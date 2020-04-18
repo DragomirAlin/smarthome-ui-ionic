@@ -11,6 +11,7 @@ export class BathroomPage implements OnInit {
   temperatura3: number;
   nivelGaz3: string;
   umiditatea3: number;
+  apa3: string;
 
 
   constructor(public sensorService: SensorService, public switchService : SwitchService) {  }
@@ -21,6 +22,7 @@ export class BathroomPage implements OnInit {
         this.temperatura3 = res.temperatura
         this.umiditatea3 = res.umiditatea
         this.nivelGaz3 = res.nivelGaz
+        this.apa3 = res.apa;
       })
     }, 2000);
   }
