@@ -1,23 +1,6 @@
-<!-- <ion-header>
-  <ion-toolbar>
-    <ion-title>
-        Administrare camere
-    </ion-title>
-  </ion-toolbar>
-</ion-header> -->
-
-
 <ion-content>
  
   <body>
-  <!-- <ion-card class="welcome-card"> <img src="/assets/rooms.jpg" alt="" /></ion-card> -->
-
-  <!-- <div class="test">Usa: {{usaIntrare}}</div>
-
- <div><button type="button"  class="btn btn-primary" (click)="stream()" >GO STREAM</button></div>  -->
- 
-
-
 
 <div class="container">
   <div class="row">
@@ -28,7 +11,6 @@
           <form class="form-signin">
             <hr class="my-4">
             <button class="btn btn-lg btn-raspberry btn-block text-uppercase" type="submit" routerLink="/raspi" routerDirection="forward"><i class="fab fa-google mr-2"></i>Raspberry PI </button>
-            <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2" (click)="stream()"></i> GO STREAM</button> 
             <button class="btn btn-lg btn-rfid btn-block text-uppercase" type="submit"  routerLink="/rfid" routerDirection="forward"><i class="fab fa-google mr-2" ></i> RFID control </button> 
 
           </form>
@@ -38,29 +20,9 @@
   </div>
 </div>
 
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-sm-9 col-md-7 col-lg-6 mx-auto">
-      <div class="card card-signin2 my-5">
-        <div class="card-body">
-          <form class="form-signin">
-            <div class="box">STARE UȘĂ:</div> {{usaIntrare}} 
-          <div [ngStyle]="{ 'background-color': {{usaIntrare}} === 'deschisa' ? '#218838' : '#E0A800' }"> Stare Ușă: {{usaIntrare}}</div>
-              test: tt{{memory}}
-          </form>
-      </div>
-    </div>
-  </div>
-</div>
-</div> -->
 
 </body>
 </ion-content>
-
-
-
-
-
 <ion-tab-bar  >
   <ion-tab-button routerLink="/bedroom" routerDirection="forward" >Dormitor </ion-tab-button>
   <ion-tab-button routerLink="/kitchen" routerDirection="forward" >Bucătărie</ion-tab-button>

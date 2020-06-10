@@ -19,15 +19,17 @@
         <form class="form-signin">
         
           
-          <img src="/assets/wifi.png" /> {{ssid}}
-          <hr>
+    
           <img src="/assets/ip.png" />{{ip4}}
           <hr>
-          <img src="/assets/signal.png" />  {{signal}} dB
+
+          <img src="/assets/ram.png" /> {{free}} MB
           <hr>
-          <img src="/assets/speed.png" />            {{quality}} %
+          <img src="/assets/ram2.png" /> {{used}} MB
           <hr>
-          <button (click) ="refresh()">Refresh</button>
+          <img src="/assets/cpu.png" />  {{temp}}°C 
+          
+         
           <!-- <hr class="my-4">
           <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
           <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button> -->
@@ -39,25 +41,6 @@
 </div>
 
 
-<!-- hostname: {{hostname}}
-<hr>
-platform: {{platform}}
-<hr>
-ip4 : {{ip4}}
-<hr>
-speed: {{speed}}
-<hr>
-dhcp: {{dhcp}}
-<hr>
-mem free: {{free}}
-<hr>
-currentSyste: {{currentSystem}}
-<hr>
-local address: {{localaddress}}
-<hr>
-local port: {{localport}} -->
-
-
 
 
 
@@ -65,8 +48,6 @@ local port: {{localport}} -->
 </ion-content>
 
 <ion-tab-bar  >
-  <ion-tab-button routerLink="/raspi" routerDirection="forward" >Network </ion-tab-button>
-  <ion-tab-button routerLink="/storge" routerDirection="forward" >Storge</ion-tab-button>
-  <ion-tab-button routerLink="/raspi" routerDirection="forward" >Server</ion-tab-button>
+  <ion-tab-button routerLink="/raspi" routerDirection="forward" >Raspberry </ion-tab-button>
   <ion-tab-button routerLink="/welcome" routerDirection="forward"><ion-icon name="grid"></ion-icon></ion-tab-button>
 </ion-tab-bar>

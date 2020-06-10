@@ -7,7 +7,7 @@ import { RaspiService } from '../api/api/raspi.service'
   styleUrls: ['./storge.page.scss'],
 })
 export class StorgePage implements OnInit {
-  hostname : String;
+  hostname : String;ionic
   platform: String;
   ip4 : String;
   speed: String;
@@ -55,5 +55,12 @@ export class StorgePage implements OnInit {
       this.quality = res.quality;
     })
 
+  }
+
+  ping(){
+    
+
+    // si.inetChecksite('192.168.0.102').then(data => console.log(data));
+   
   }
 }

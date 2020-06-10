@@ -14,6 +14,7 @@ export class BedroomPage implements OnInit {
   umiditatea2: number;
   usa: string;
   aer: number;
+  plante:string;
  
   constructor(public sensorService: SensorService, public switchService : SwitchService) {  }
 
@@ -24,6 +25,10 @@ export class BedroomPage implements OnInit {
         this.umiditatea2 = res.umiditatea
         this.nivelGaz2 = res.nivelGaz
         this.aer = res.aer;
+      })
+
+      this.sensorService.dataId(3).subscribe((res) =>{
+        this.plante = res.plante;
       })
 
       this.sensorService.dataId(3).subscribe((res)=>{

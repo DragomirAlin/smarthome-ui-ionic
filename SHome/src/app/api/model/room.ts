@@ -20,5 +20,6 @@ export interface Room {
     foc?: string;
     aer?: number;
     apa?: string;
+    plante?: string;
     shipDate?: Date;
 }
