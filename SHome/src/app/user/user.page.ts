@@ -17,9 +17,8 @@ export class UserPage implements OnInit {
   register(f: NgForm) {
     this.rfidService.addRfid(f.value).subscribe((res)=>
       {
-       
     })
-    location.reload()
+    location.reload();
 
 }
 

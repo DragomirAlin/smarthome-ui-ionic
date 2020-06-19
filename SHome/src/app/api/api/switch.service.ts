@@ -26,7 +26,7 @@ import { Configuration }                                     from '../configurat
 @Injectable()
 export class SwitchService {
 
-    protected basePath = 'http://192.168.0.102:3000';
+    protected basePath = 'http://192.168.0.101/proxy';
     // protected basePath = 'http://localhost:3000';
 
     public defaultHeaders = new HttpHeaders();
@@ -83,7 +83,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/rooms/1/OFF`,
+        return this.httpClient.get<any>(`${this.basePath}/1/LED=OFF`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -119,7 +119,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/rooms/1/ON`,
+        return this.httpClient.get<any>(`${this.basePath}/1/LED=ON`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -155,7 +155,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/rooms/2/OFF`,
+        return this.httpClient.get<any>(`${this.basePath}/2/LED=OFF`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -191,7 +191,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/rooms/2/ON`,
+        return this.httpClient.get<any>(`${this.basePath}/2/LED=ON`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -227,7 +227,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/rooms/3/OFF`,
+        return this.httpClient.get<any>(`${this.basePath}/3/LED=OFF`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -263,7 +263,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/rooms/3/ON`,
+        return this.httpClient.get<any>(`${this.basePath}/3/LED=ON`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -299,7 +299,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/rooms/AIR/ON`,
+        return this.httpClient.get<any>(`${this.basePath}/1/AIR=ON`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,
@@ -335,7 +335,7 @@ export class SwitchService {
         const consumes: string[] = [
         ];
 
-        return this.httpClient.get<any>(`${this.basePath}/rooms/AIR/OFF`,
+        return this.httpClient.get<any>(`${this.basePath}/1/AIR=OFF`,
             {
                 withCredentials: this.configuration.withCredentials,
                 headers: headers,

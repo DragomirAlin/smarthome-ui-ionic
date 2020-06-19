@@ -35,7 +35,7 @@ export class BedroomPage implements OnInit {
         this.usa = res.usa;
       })
 
-    }, 2000);
+    }, 1000);
   }
 
   switchOn(){

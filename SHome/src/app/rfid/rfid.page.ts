@@ -44,9 +44,16 @@ export class RfidPage implements OnInit {
 }
 
 delete(data){
-  this.rfidService.delete(data.uid).subscribe((res=>{console.log(res)}))
-  location.reload()
+  this.rfidService.delete(data.uid).subscribe((res)=>{console.log(res)
+    
 }
+ 
+  
+  )
+  location.reload()
+
+}
+
 
 
   
