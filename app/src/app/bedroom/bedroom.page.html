@@ -1,0 +1,120 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>DORMITOR</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-center">Temperatură</h6>
+                        <form class="form-signin">
+                            <hr>
+                            <img class="icon" src="/assets/temp.png">
+                            {{temperatura2 }}°C
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-signin2 my-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-center">Umiditate</h6>
+                        <form class="form-signin">
+                            <hr>
+                            <img class="icon" src="/assets/umid.png">
+                            {{umiditatea2}}%
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="w-100"></div>
+            <div class="col">
+                <div class="card card-signin3 my-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-center">Plante</h6>
+                        <form class="form-signin2">
+                            <hr>
+                            <img class="icon2" src="/assets/plant2.png">
+
+                            {{plante}}
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-signin3 my-5">
+                    <div class="card-body">
+                        <h6 class="card-title text-center">Calitate aer</h6>
+                        <form class="form-signin2">
+                            <hr>
+                            <img class="icon2" src="/assets/airs.png">
+
+                            {{aer}}ppm
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col">
+                <div class="card card-signin5 my-5">
+                    <div class="card-body">
+                        <img class="cooler" src="/assets/air4.png"/> Aer condiționat
+
+                        <form class="form-signin1">
+                            <div class="button">
+                                <label class="rocker rocker-small">
+                                    <input type="checkbox">
+                                    <span class="switch-left" (click)="coolerOn()">ON</span>
+                                    <span class="switch-right" (click)="coolerOff()">OFF</span>
+                                </label>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="w-100"></div>
+            <div class="col">
+                <div class="card card-signin4 my-5">
+                    <div class="card-body">
+                        <img src="/assets/light2.png"/> Lumină
+                        <form class="form-signin1">
+                            <div class="button">
+                                <label class="rocker rocker-small">
+                                    <input type="checkbox">
+                                    <span class="switch-left" (click)="switchOn()">ON</span>
+                                    <span class="switch-right" (click)="switchOff()">OFF</span>
+                                </label>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </body>
+</ion-content>
+<ion-tab-bar>
+    <ion-tab-button routerLink="/bedroom" routerDirection="forward">Dormitor</ion-tab-button>
+    <ion-tab-button routerLink="/kitchen" routerDirection="forward">Bucătărie</ion-tab-button>
+    <ion-tab-button routerLink="/bathroom" routerDirection="forward">Baie</ion-tab-button>
+    <ion-tab-button routerLink="/welcome" routerDirection="forward">
+        <ion-icon name="grid"></ion-icon>
+    </ion-tab-button>
+</ion-tab-bar>
+
